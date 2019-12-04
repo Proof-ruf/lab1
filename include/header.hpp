@@ -10,12 +10,17 @@
 #include <vector>
 #include <fstream>
 
-using namespace std;
+using std::string;
+using std::map;
+using std::vector;
+using std::any;
+using std::pair;
+using std::cout;
+using std::ifstream;
 
 class Json {
 public:
-
-    Json(const string& s);
+    explicit Json(const string& s);
     Json();
 
 
@@ -39,8 +44,7 @@ public:
         if (my_vector.empty())
         {
             throw "Error: exemplar is object";
-        }
-        else
+        } else
             return my_vector[index];
     }
 
@@ -51,9 +55,9 @@ public:
 
     map<string, any> my_map;
     vector <any> my_vector;
+	
 private:
     void parse(const std::string &s, unsigned i);
-
 };
-
 #endif // INCLUDE_HEADER_HPP_
+

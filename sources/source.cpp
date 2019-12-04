@@ -202,6 +202,7 @@ void Json::parse(const std::string &s, unsigned i)
     }
 }
 
+
 Json Json::parse(const std::string &s)
 {
     return Json(s);
@@ -210,7 +211,7 @@ Json Json::parse(const std::string &s)
 Json Json::parseFile(const std::string& path_to_file)
 {
     string tmp, str;
-    ifstream in (path_to_file);
+    ifstream in(path_to_file);
     if (!in)
     {
         cout <<"gg";
