@@ -46,7 +46,7 @@ public:
             throw "Error: exemplar is object";
         } else {
             return my_vector[index];
-		}
+        }
     }
 
     static Json parse(const std::string& s);
