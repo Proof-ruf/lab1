@@ -126,7 +126,7 @@ void Json::parse(const std::string &s, unsigned i)
                 this->my_map.insert(pair<string, any>(key, value));
                 i = end_of_string(s, i);
             } else if ((s[i] >= '0') && (s[i] <= '9')) {
-                double value = stod(word_to_sth(s, i));
+                int value = stoi(word_to_sth(s, i));
                 this->my_map.insert(pair<string, any>(key, value));
                 i = ind_of_next_space(s, i);
             } else if ((s[i] == 't') || s[i] == 'f') {
@@ -169,7 +169,7 @@ void Json::parse(const std::string &s, unsigned i)
                 this->my_vector.push_back(value);
                 i = end_of_string(s, i);
             } else if ((s[i] >= '0') && (s[i] <= '9')) {
-                double value = stod(word_to_sth(s, i));
+                int value = stoi(word_to_sth(s, i));
                 this->my_vector.push_back(value);
                 i = ind_of_next_space(s, i);
             } else if ((s[i] == 't') || s[i] == 'f') {
