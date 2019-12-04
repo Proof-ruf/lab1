@@ -44,8 +44,9 @@ public:
         if (my_vector.empty())
         {
             throw "Error: exemplar is object";
-        } else
+        } else {
             return my_vector[index];
+		}
     }
 
     static Json parse(const std::string& s);
@@ -55,7 +56,7 @@ public:
 
     map<string, any> my_map;
     vector <any> my_vector;
-	
+
 private:
     void parse(const std::string &s, unsigned i);
 };
