@@ -55,8 +55,7 @@ int it_is_true(const string& s, unsigned int i)
         {
             i++;
             tmp++;
-        } else
-        {
+        } else {
             flag = 0;
             break;
         }
@@ -73,8 +72,7 @@ int it_is_false(const string& s, unsigned int i)
         if (a[tmp] == s[i])
         {
             i++;
-        }
-        else {
+        } else {
             flag = 0;
             break;
         }
@@ -127,25 +125,21 @@ void Json::parse(const std::string &s, unsigned i)
                 string value = word_to_string(s, i);
                 this->my_map.insert(pair<string, any>(key, value));
                 i = end_of_string(s, i);
-            } else if ((s[i] >= '0') && (s[i] <= '9'))
-            {
+            } else if ((s[i] >= '0') && (s[i] <= '9')) {
                 double value = stod(word_to_sth(s, i));
                 this->my_map.insert(pair<string, any>(key, value));
                 i = ind_of_next_space(s, i);
-            } else if ((s[i] == 't') || s[i] == 'f')
-            {
+            } else if ((s[i] == 't') || s[i] == 'f') {
                 if (it_is_true(s, i))
                 {
                     bool value = true;
                     this->my_map.insert(pair<string, any>(key, value));
-                } else if (it_is_false(s, i))
-                {
+                } else if (it_is_false(s, i)) {
                     bool value = false;
                     this->my_map.insert(pair<string, any>(key, value));
                 }
                 i = ind_of_next_space(s, i);
-            } else if ((s[i] == '{') || (s[i] == '['))
-            {
+            } else if ((s[i] == '{') || (s[i] == '[')) {
                 Json value;
                 value.parse(s, i);
                 this->my_map.insert(pair<string, any>(key, value));
@@ -162,8 +156,7 @@ void Json::parse(const std::string &s, unsigned i)
                 i = ind_of_next_sym(s, i);
             }
         }
-    } else if (s[i] == '[')
-    {
+    } else if (s[i] == '[') {
         i++;
         while (s[i] != '\0')
         {
@@ -175,25 +168,21 @@ void Json::parse(const std::string &s, unsigned i)
                 string value = word_to_string(s, i);
                 this->my_vector.push_back(value);
                 i = end_of_string(s, i);
-            } else if ((s[i] >= '0') && (s[i] <= '9'))
-            {
+            } else if ((s[i] >= '0') && (s[i] <= '9')) {
                 double value = stod(word_to_sth(s, i));
                 this->my_vector.push_back(value);
                 i = ind_of_next_space(s, i);
-            } else if ((s[i] == 't') || s[i] == 'f')
-            {
+            } else if ((s[i] == 't') || s[i] == 'f') {
                 if (it_is_true(s, i))
                 {
                     bool value = true;
                     this->my_vector.push_back(value);
-                } else if (it_is_false(s, i))
-                {
+                } else if (it_is_false(s, i)) {
                     bool value = false;
                     this->my_vector.push_back(value);
                 }
                 i = ind_of_next_space(s, i);
-            } else if ((s[i] == '{') || (s[i] == '['))
-            {
+            } else if ((s[i] == '{') || (s[i] == '[')) {
                 Json value;
                 value.parse(s, i);
                 this->my_vector.push_back(value);
@@ -226,9 +215,8 @@ Json Json::parseFile(const std::string& path_to_file)
     {
         cout <<"gg";
         return Json();
-    } else
-    {
-        while(getline(in, tmp))
+    } else {
+        while (getline(in, tmp))
         {
             str = str+tmp+'\n';
         }
