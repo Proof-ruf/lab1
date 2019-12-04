@@ -2,19 +2,19 @@
 
 #include <gtest/gtest.h>
 
-std::string json = "{
-    "lastname" : "Ivanov",
-    "firstname" : "Ivan",
-    "age" : 25,
-    "islegal" : false,
-    "marks" : [
-    	4,5,5,5,2,3
-    ],
-    "address" : {
-    	"city" : "Moscow",
-        "street" : "Vozdvijenka"
-    }
-}";
+std::string json = "{\n"
+                   "    \"lastname\" : \"Ivanov\",\n"
+                   "    \"firstname\" : \"Ivan\",\n"
+                   "    \"age\" : 25,\n"
+                   "    \"islegal\" : false,\n"
+                   "    \"marks\" : [\n"
+                   "    \t4,5,5,5,2,3\n"
+                   "    ],\n"
+                   "    \"address\" : {\n"
+                   "    \t\"city\" : \"Moscow\",\n"
+                   "        \"street\" : \"Vozdvijenka\"\n"
+                   "    }\n"
+                   "}";
 
 Json object = Json::parse(json);
 EXPECT_EQ(std::any_cast<std::string>(object["lastname"]), "Ivanov");
