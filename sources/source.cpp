@@ -1,5 +1,5 @@
 // Copyright 2018 Your Name <your_email>
-
+//hello, xia
 #include <header.hpp>
 
 unsigned ind_of_next_sym(const string& s, unsigned int i)
