@@ -4,7 +4,7 @@
 #include "header.hpp"
 
 TEST(Parse, Text){
-static std::string json = "{\n"
+Json object ("{\n"
                    "    \"lastname\" : \"Ivanov\",\n"
                    "    \"firstname\" : \"Ivan\",\n"
                    "    \"age\" : 25,\n"
@@ -16,8 +16,7 @@ static std::string json = "{\n"
                    "    \t\"city\" : \"Moscow\",\n"
                    "        \"street\" : \"Vozdvijenka\"\n"
                    "    }\n"
-                   "}";
-Json object = Json::parse(json);
+                   "}");
 EXPECT_EQ(std::any_cast<std::string>(object["lastname"]), "Ivanov");
 EXPECT_EQ(std::any_cast<bool>(object["islegal"]), false);
 EXPECT_EQ(std::any_cast<int>(object["age"]), 25);
