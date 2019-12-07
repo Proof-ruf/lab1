@@ -30,6 +30,29 @@ EXPECT_EQ(std::any_cast<std::string>(address["city"]), "Moscow");
 EXPECT_EQ(std::any_cast<std::string>(address["street"]), "Vozdvijenka");
 }
 
+TEST(Parse, Text){
+Json object("{\n"
+                   "    \"address\" : {\n"
+                   "    \t\"city\" : \"Moscow\",\n"
+                   "        \"street\" : \"Vozdvijenka\"\n"
+                   "    }\n"
+                   "}");
+
+auto address = std::any_cast<Json>(object["address"]);
+EXPECT_EQ(std::any_cast<std::string>(address["city"]), "Moscow");
+EXPECT_EQ(std::any_cast<std::string>(address["street"]), "Vozdvijenka");
+}
+
+TEST(Parse, Text){
+Json object("{\n"
+                   "    \"lastname\" : \"Ivanov\",\n"
+                   "    \"islegal\" : false,\n"
+                   "}");
+EXPECT_EQ(std::any_cast<std::string>(object["lastname"]), "Ivanov");
+EXPECT_EQ(std::any_cast<bool>(object["islegal"]), false);
+
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
