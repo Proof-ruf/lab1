@@ -50,7 +50,6 @@ Json object("{\n"
                    "}");
 EXPECT_EQ(std::any_cast<std::string>(object["lastname"]), "Ivanov");
 EXPECT_EQ(std::any_cast<bool>(object["islegal"]), false);
-
 }
 
 int main(int argc, char **argv) {
