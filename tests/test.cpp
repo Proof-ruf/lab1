@@ -4,7 +4,7 @@
 #include "header.hpp"
 
 TEST(Parse, Text){
-Json object ("{\n"
+Json object("{\n"
                    "    \"lastname\" : \"Ivanov\",\n"
                    "    \"firstname\" : \"Ivan\",\n"
                    "    \"age\" : 25,\n"
